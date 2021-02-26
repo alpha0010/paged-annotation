@@ -90,8 +90,8 @@ type Point = [number, number];
       {
         "color": "#810082",
         "fontSize": 16,
-        "point": [0.31522, 0.4533],
-        "str": "Example text annotations."
+        "point": [0.31522, 0.4423],
+        "str": "Example text annotation."
       }
     ]
   },
@@ -117,3 +117,15 @@ type Point = [number, number];
   }
 ]
 ```
+
+![Rendered Annotations](img/example-render.png)
+
+## Renderer Implementation
+
+When rendering strokes, consider using smooth strokes instead of rigidly
+following the path. For example,
+
+![Rendered Annotations](img/control-points.png)
+
+This option draws curves connecting midpoints in the path. The actual points of
+the path are used as the curve control values.
